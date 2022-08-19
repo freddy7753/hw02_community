@@ -13,7 +13,7 @@ def index(request):
     # В словаре context отправляем информацию в шаблон
     context = {
         'posts': posts,
-              }
+    }
     return render(request, 'posts/index.html', context)
 
 
