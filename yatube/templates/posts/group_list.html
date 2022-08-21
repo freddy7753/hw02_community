@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
-<html>
-  <head>
-    <title>
-      {% block title %}
-      {{ title }}
-      {% endblock %}
-    </title>
-  </head>
-  <body> 
-    <main>
-    {% block content %}
-     <!-- класс py-5 создает отступы сверху и снизу блока -->
-     <div class="container py-5">
-      <h1> {{ group }} </h1>
-      <p>  
-      </p>
+{% block title %}
+  {{ title }}
+{% endblock %}
+{% block content %}
+  <!-- класс py-5 создает отступы сверху и снизу блока -->
+  <div class="container py-5">
+  <h1> {{ group }} </h1>
+    <p>  
+      {{ group.description }}
+    </p>
+    <article>
       {% for post in posts %}
       <ul>
         <li>
@@ -26,11 +21,9 @@
       </ul>
       <p>{{ post.text }}</p> 
       {% if post.group %}   
-      <a href=" {% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+        <a href=" {% url 'posts:group_list' post.group.slug %}">все записи группы</a>
       {% endif %}
       {% if not forloop.last %}<hr>{% endif %}
-    {% endfor %}
-    {% endblock %}
-    </main>
-  </body>
-</html>
+      {% endfor %}
+    </article>
+{% endblock %}
