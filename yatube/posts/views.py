@@ -5,7 +5,7 @@ NOMBER_OF_POST: int = 10
 
 
 def index(request):
-    posts = Post.objects.order_by('-pub_date',)[:NOMBER_OF_POST]
+    posts = Post.objects.all()[:NOMBER_OF_POST]
     context = {
         'posts': posts,
     }
@@ -14,7 +14,7 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.order_by('-pub_date',)[:NOMBER_OF_POST]
+    posts = group.posts.all()[:NOMBER_OF_POST]
     context = {
         'group': group,
         'posts': posts,
