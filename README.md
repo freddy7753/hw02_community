@@ -7,7 +7,7 @@
 # Установка
 1. Склонируйте репозиторий:
 
-``` git clone https://github.com/your_username/yatube.git ```
+``` git clone https://github.com/freddy7753/hw02_community.git ```
 
 2. Установите зависимости:
 
